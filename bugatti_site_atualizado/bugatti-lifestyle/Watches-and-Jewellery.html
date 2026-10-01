@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="site.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watches & Jewellery | BUGATTI</title>
+<link rel="stylesheet" href="../shared/bugatti-menu.css"></head>
+    <body>
+        <div class="topbar">
+            <a href="menu-collections.html" target="janela">MENU</a>
+        </div>
+        <div class="page">
+            <H1>Watches &amp; Jewellery</H1>
+
+            <div class="cards-grid">
+                <a class="card" href="#">
+                    <img src="img3/pag3-foto1.png" alt="Watches & Jewellery — Bugatti lifestyle">
+                    <div class="card-top">
+                        <p class="card-kicker">Precisão em cada detalhe</p>
+                        <h3 class="card-title">Relojoaria Bugatti</h3>
+                    </div>
+                    <span class="card-cta">Saber mais</span>
+                </a>
+            </div>
+        </div>
+        
+    <script>(function(){
+const menu=document.createElement('div');menu.className='bugatti-menu';menu.innerHTML=`<a class="bm-brand" href="../index.html">BUGATTI</a><button class="bm-open" aria-label="Abrir menu"><span>Menu</span><span class="bm-icon"><i></i><i></i></span></button>`;
+document.body.prepend(menu);
+const panel=document.createElement('aside');panel.className='bm-panel';panel.innerHTML=`<button class="bm-close">Close ×</button><div class="bm-grid"><div class="bm-col"><h4>Automobiles</h4><a href="../bugatti-destrier-completo/bugatti-destrier-completo/index.html">Solitaire — Destrier</a><a href="../bugatti-eb110/index.html">EB110</a></div><div class="bm-col"><h4>Lifestyle</h4><a href="Art-of-Living.html">Art of Living</a><a href="Apparell-and-Accessories.html">Apparel & Accessories</a><a href="Watches-and-Jewellery.html">Watches & Jewellery</a><a href="Collectibles-and-Model-Cars.html">Collectibles & Model Cars</a></div><div class="bm-col small"><h4>Maison & Network</h4><a href="../buggati/buggati/maison.html">Bugatti Maison</a><a href="../buggati/buggati/delaer.html">Dealer Network</a><a href="../careers/index.html">Careers</a><a href="../index.html">Home</a></div></div><div class="bm-foot"><span>BUGATTI AUTOMOBILES</span><span>AN IMMERSIVE EXPERIENCE</span></div>`;document.body.append(panel);
+function toggle(){panel.classList.toggle('active');document.documentElement.classList.toggle('bm-lock',panel.classList.contains('active'))}menu.querySelector('.bm-open').onclick=toggle;panel.querySelector('.bm-close').onclick=toggle;panel.querySelectorAll('a').forEach(a=>a.onclick=()=>panel.classList.remove('active'));
+window.addEventListener('scroll',()=>menu.style.background=scrollY>80?'rgba(0,0,0,.22)':'transparent');
+})();</script></body>
+</html>

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+:root{--sky:#78a9ed;--font:'Montserrat','Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body.cr{margin:0;background:#000;color:#fff;font-family:var(--font);font-weight:300;-webkit-font-smoothing:antialiased}
+.bugatti-menu,.bm-panel{font-family:var(--font)}
+.cr img{display:block;max-width:100%}
+
+/* Hero */
+.cr-hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(140deg,#06152d,#000)}
+.cr-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cr-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.1) 40%,rgba(0,0,0,.82))}
+.cr-hero-copy{position:relative;z-index:2;padding:0 6vw 14vh}
+.cr-tag{margin:0 0 14px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:400;opacity:.85}
+.cr-hero h1{margin:0;font-weight:200;font-size:clamp(54px,11vw,180px);line-height:.9;letter-spacing:-.02em;text-transform:uppercase;animation:cr-rise 1.3s cubic-bezier(.16,1,.3,1) both}
+.cr-hero p.cr-sub{margin:22px 0 0;font-size:16px;font-weight:300;opacity:.9}
+@keyframes cr-rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+
+/* Seções */
+.cr-sec{padding:14vh 6vw 0}
+.cr-sec:last-of-type{padding-bottom:14vh}
+.cr-narrow{max-width:760px}
+.cr h2{margin:0 0 26px;font-weight:200;font-size:clamp(30px,4.6vw,66px);line-height:1.05;letter-spacing:-.01em}
+.cr h3{margin:0 0 12px;font-weight:400;font-size:17px;letter-spacing:.02em}
+.cr p{margin:0;font-size:16px;line-height:1.8;color:rgba(255,255,255,.85);max-width:62ch}
+.cr-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:7vh}
+.cr-pair img{width:100%;aspect-ratio:4/3;object-fit:cover}
+
+/* Cartões */
+.cr-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:6vh}
+.cr-card img{width:100%;aspect-ratio:4/5;object-fit:cover;margin-bottom:22px}
+.cr-card p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.75)}
+
+/* Valores */
+.cr-values{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:6vh}
+.cr-values div{border-top:1px solid rgba(255,255,255,.22);padding-top:24px}
+
+/* Depoimentos */
+.cr-quote{max-width:900px}
+.cr-quote blockquote{margin:0}
+.cr-quote blockquote p{font-size:clamp(18px,2vw,24px);line-height:1.7;font-weight:200;color:#fff;max-width:none}
+.cr-person{display:flex;align-items:center;gap:18px;margin-top:34px}
+.cr-person img{width:84px;height:84px;object-fit:cover;border-radius:50%}
+.cr-person span{font-size:14px;font-weight:400}
+
+/* Rodapé */
+.cr-foot{margin-top:14vh;padding:34px 6vw;border-top:1px solid rgba(255,255,255,.14);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+.cr-foot a{position:relative;color:#fff;text-decoration:none;padding-bottom:8px}
+.cr-foot a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:#fff;transform-origin:left;transition:transform .5s cubic-bezier(.76,0,.24,1)}
+.cr-foot a:hover::after,.cr-foot a:focus-visible::after{transform:scaleX(.35)}
+.cr-foot a:focus-visible{outline:2px solid var(--sky);outline-offset:6px}
+.cr-foot span{opacity:.45}
+
+@media(max-width:900px){
+  .cr-cards,.cr-values{grid-template-columns:1fr}
+  .cr-pair{grid-template-columns:1fr}
+  .cr-card img{aspect-ratio:4/3}
+  .cr-sec{padding:10vh 22px 0}
+  .cr-hero-copy{padding:0 22px 12vh}
+  .cr-foot{padding:28px 22px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cr-hero h1{animation:none}
+}

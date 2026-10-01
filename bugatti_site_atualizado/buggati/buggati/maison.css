@@ -1,0 +1,237 @@
+
+
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+background-color: #1a1a1a;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 60px 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5.5rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  color: #e0e0e0;
+}
+
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 650px;
+  color: #dddddd;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-brand {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+}
+body {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-container {
+  display: flex;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.gallery-container .column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.gallery-container .column-offset {
+  margin-top: 120px;
+}
+
+.gallery-container .card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  border: none;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-container .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-container .card-content {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.gallery-container .card-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.gallery-container .btn-saber-mais {
+  position: absolute;
+  bottom: 24px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-container .btn-saber-mais:hover {
+  opacity: 0.7;
+}
+
+.container1 {
+  padding: 60px 0;
+}
+
+.container1 .card {
+  background-color: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  color: #ffffff;
+}
+
+.container1 .card-header {
+  background-color: transparent;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 24px 30px;
+}
+
+.container1 .card-header h1 {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.container1 .card-body {
+  padding: 30px;
+}
+
+.container1 .form-label {
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  margin-bottom: 8px;
+}
+
+.container1 .form-control,
+.container1 .form-select {
+  background-color: #0d0d0d;
+  border: 1px solid #333333;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.container1 .form-control:focus,
+.container1 .form-select:focus {
+  border-color: #ffffff;
+  box-shadow: none;
+}
+
+.container1 .btn-dark {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 30px;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.container1 .btn-dark:hover {
+  background-color: #cccccc;
+}
+

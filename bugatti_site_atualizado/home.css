@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+:root{
+  --bh-black:#000;
+  --bh-ink:#05070b;
+  --bh-blue:#082b63;
+  --bh-sky:#78a9ed;
+  --bh-white:#fff;
+  --bh-font:'Montserrat','Helvetica Neue',Arial,sans-serif;
+}
+
+html{scroll-snap-type:y proximity;scroll-behavior:smooth}
+body.bh{margin:0;background:var(--bh-black);color:var(--bh-white);font-family:var(--bh-font);-webkit-font-smoothing:antialiased}
+.bugatti-menu{font-family:var(--bh-font)}
+.bm-panel{font-family:var(--bh-font)}
+
+/* ---------- Painéis em tela cheia ---------- */
+.bh-panel{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;scroll-snap-align:start;background:linear-gradient(140deg,#06152d,#000)}
+.bh-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.bh-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.78) 100%)}
+.bh-copy{position:relative;z-index:2;width:100%;padding:0 6vw 11vh;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.bh-tag{font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:400;opacity:.85;margin:0}
+.bh-title{margin:0;font-weight:200;font-size:clamp(54px,11vw,180px);line-height:.9;letter-spacing:-.02em;text-transform:uppercase}
+.bh-title.md{font-size:clamp(44px,8vw,132px)}
+.bh-lead{margin:6px 0 10px;max-width:46ch;font-size:15px;line-height:1.65;font-weight:300;opacity:.9}
+
+/* Link "Discover" com linha que cresce no hover */
+.bh-link{position:relative;display:inline-block;padding:0 0 9px;color:#fff;text-decoration:none;font-size:11px;letter-spacing:.3em;text-transform:uppercase;font-weight:500}
+.bh-link::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:#fff;transform-origin:left;transition:transform .5s cubic-bezier(.76,0,.24,1)}
+.bh-link:hover::after,.bh-link:focus-visible::after{transform:scaleX(.35)}
+.bh-link:focus-visible,.bh-dot:focus-visible,.bh-card:focus-visible,.bh-foot a:focus-visible{outline:2px solid var(--bh-sky);outline-offset:6px}
+.bh-links{display:flex;gap:38px;flex-wrap:wrap}
+
+/* ---------- Hero ---------- */
+.bh-hero .bh-copy{padding-bottom:14vh}
+.bh-hero .bh-title{animation:bh-rise 1.3s cubic-bezier(.16,1,.3,1) both}
+.bh-hero .bh-tag,.bh-hero .bh-links{animation:bh-fade 1.6s .5s ease both}
+.bh-scroll{position:absolute;z-index:2;left:50%;bottom:28px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#fff;text-decoration:none;opacity:.8}
+.bh-scroll i{display:block;width:1px;height:42px;background:linear-gradient(#fff,transparent);animation:bh-line 2.2s ease-in-out infinite;transform-origin:top}
+@keyframes bh-rise{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes bh-fade{from{opacity:0}to{opacity:1}}
+@keyframes bh-line{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* ---------- Lifestyle ---------- */
+.bh-life{background:var(--bh-ink);align-items:center;padding:14vh 0 10vh}
+.bh-life-inner{width:100%;padding:0 6vw}
+.bh-life-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:5vh}
+.bh-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.bh-card{display:block;color:#fff;text-decoration:none}
+.bh-card-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:#111}
+.bh-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
+.bh-card:hover .bh-card-img img{transform:scale(1.05)}
+.bh-card-cap{display:flex;justify-content:space-between;align-items:center;padding:16px 2px 0;font-size:13px;font-weight:300;letter-spacing:.06em}
+.bh-card-cap span:last-child{font-size:20px;font-weight:200;transition:transform .4s}
+.bh-card:hover .bh-card-cap span:last-child{transform:translateX(6px)}
+
+/* ---------- Maison ---------- */
+.bh-maison .bh-shade{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.1) 40%,rgba(0,0,0,.82) 100%)}
+
+/* ---------- Navegação lateral por pontos ---------- */
+.bh-dots{position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:9000;display:flex;flex-direction:column;gap:18px;mix-blend-mode:difference}
+.bh-dot{position:relative;width:11px;height:11px;padding:0;border:1px solid #fff;border-radius:50%;background:transparent;cursor:pointer;transition:background .3s,transform .3s}
+.bh-dot.on{background:#fff;transform:scale(1.15)}
+.bh-dot span{position:absolute;right:24px;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:var(--bh-font);font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#fff;opacity:0;pointer-events:none;transition:opacity .3s}
+.bh-dot:hover span,.bh-dot:focus-visible span{opacity:1}
+
+/* ---------- Rodapé ---------- */
+.bh-foot{scroll-snap-align:end;background:var(--bh-black);padding:9vh 6vw 34px;border-top:1px solid rgba(255,255,255,.14)}
+.bh-foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;max-width:1300px}
+.bh-foot-brand{font-size:17px;letter-spacing:.34em;font-weight:500;margin:0 0 14px}
+.bh-foot-note{margin:0;max-width:30ch;font-size:13px;font-weight:300;line-height:1.7;opacity:.6}
+.bh-foot h4{margin:0 0 20px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;font-weight:400;opacity:.5}
+.bh-foot a{display:block;color:#fff;text-decoration:none;font-size:14px;font-weight:300;margin:0 0 12px;opacity:.85;transition:color .3s,opacity .3s}
+.bh-foot a:hover{color:var(--bh-sky);opacity:1}
+.bh-legal{margin-top:9vh;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.4}
+
+/* ---------- Responsivo ---------- */
+@media(max-width:1000px){
+  .bh-cards{grid-template-columns:repeat(2,1fr)}
+  .bh-foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  html{scroll-snap-type:none}
+  .bh-copy{padding:0 22px 12vh}
+  .bh-life-inner{padding:0 22px}
+  .bh-cards{gap:12px}
+  .bh-dots{display:none}
+  .bh-links{gap:26px}
+  .bh-foot{padding:8vh 22px 28px}
+  .bh-foot-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .bh-hero .bh-title,.bh-hero .bh-tag,.bh-hero .bh-links,.bh-scroll i{animation:none}
+  .bh-card-img img{transition:none}
+}
